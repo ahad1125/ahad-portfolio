@@ -8,11 +8,11 @@ export function SiteFooter() {
           Built by{" "}
           <a
             className="link"
-            href="https://x.com/alkushx"
+            href="https://github.com/ahad1125"
             target="_blank"
             rel="noopener"
           >
-            alkush
+            Abdul Ahad
           </a>
           . The source code is available on{" "}
           <a

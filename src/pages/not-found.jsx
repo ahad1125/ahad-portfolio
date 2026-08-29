@@ -1,10 +1,11 @@
-import { useEffect } from "react";
 import { NotFound as PageNotFound } from "@/components/not-found";
+import { SEO } from "@/components/seo";
 
 export default function NotFoundPage() {
-  useEffect(() => {
-    document.title = "Page Not Found – Alkush Pipania";
-  }, []);
-
-  return <PageNotFound className="h-screen" />;
+  return (
+    <>
+      <SEO title="Page Not Found" description="The page you are looking for does not exist." />
+      <PageNotFound className="h-screen" />
+    </>
+  );
 }

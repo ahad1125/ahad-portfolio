@@ -4,7 +4,7 @@ import { useMotionValueEvent, useScroll } from "motion/react";
 import { usePathname } from "@/hooks/use-pathname";
 import { useEffect, useRef, useState } from "react";
 
-import { AlkushMark } from "./Alkush-mark";
+import { LogoMark } from "./logo-mark";
 
 const calcDistance = (el) => {
   const rect = el.getBoundingClientRect();
@@ -13,7 +13,7 @@ const calcDistance = (el) => {
   return scrollTop + rect.top + rect.height - headerHeight;
 };
 
-function AlkushMarkMotion() {
+function LogoMarkMotion() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
   const distanceRef = useRef(160);
@@ -39,7 +39,7 @@ function AlkushMarkMotion() {
   }, []);
 
   return (
-    <AlkushMark
+    <LogoMark
       data-visible={visible}
       className="translate-y-2 opacity-0 transition-[opacity,translate] duration-300 data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
     />
@@ -49,5 +49,5 @@ function AlkushMarkMotion() {
 export function SiteHeaderMark() {
   const pathname = usePathname();
   const isHome = ["/", "/index"].includes(pathname);
-  return isHome ? <AlkushMarkMotion /> : <AlkushMark />;
+  return isHome ? <LogoMarkMotion /> : <LogoMark />;
 }

@@ -14,7 +14,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ProseMono } from "@/components/ui/typography";
+import { Prose } from "@/components/ui/typography";
 
 export function ProjectItem({ className, project }) {
   const { start, end } = project.period;
@@ -135,9 +135,9 @@ export function ProjectItem({ className, project }) {
               )}
 
               {project.description && (
-                <ProseMono>
+                <Prose className="prose-sm text-foreground">
                   <Markdown>{project.description}</Markdown>
-                </ProseMono>
+                </Prose>
               )}
 
               {project.skills.length > 0 && (

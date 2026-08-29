@@ -13,11 +13,12 @@ import { Image } from "@/components/image-compat";
 import { Markdown } from "@/components/markdown";
 import { Tag } from "@/components/ui/tag";
 import { Button } from "@/components/ui/button";
-import { ProseMono } from "@/components/ui/typography";
+import { Prose } from "@/components/ui/typography";
 import { ImageLightbox } from "@/components/image-lightbox";
 import { PROJECTS } from "@/portfolio/data/projects";
 import { cn } from "@/lib/utils";
 import { USER } from "@/portfolio/data/user";
+import { SEO } from "@/components/seo";
 
 // Helper function to get first alphanumeric character, skipping emojis
 function getFirstAlphanumeric(str) {
@@ -46,8 +47,6 @@ export default function ProjectDetailPage() {
   useEffect(() => {
     if (!project) {
       navigate("/not-found", { replace: true });
-    } else {
-      document.title = `${project.title} – ${USER.displayName}`;
     }
   }, [project, navigate]);
 
@@ -61,6 +60,7 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="mx-auto md:max-w-5xl *:[[id]]:scroll-mt-22">
+      <SEO title={project.title} description={project.description} path={`/project/${project.id}`} />
       <Separator />
 
       {/* Header with back button and title */}
@@ -217,9 +217,9 @@ export default function ProjectDetailPage() {
             <h3 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
               About This Project
             </h3>
-            <ProseMono>
+            <Prose className="prose-sm text-foreground">
               <Markdown>{project.description}</Markdown>
-            </ProseMono>
+            </Prose>
           </div>
           <Separator />
         </>

@@ -12,6 +12,7 @@ import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { USER } from "@/portfolio/data/user";
+import { SEO } from "@/components/seo";
 
 function Turnstile({ siteKey, onVerify, onError, onExpire, theme }) {
   const containerRef = useRef(null);
@@ -89,9 +90,7 @@ export default function ContactPage() {
     message: "",
   });
 
-  useEffect(() => {
-    document.title = `Get in Touch – ${USER.displayName}`;
-  }, []);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -139,6 +138,7 @@ export default function ContactPage() {
 
   return (
     <div className="mx-auto md:max-w-5xl *:[[id]]:scroll-mt-22">
+      <SEO title="Contact" description="Get in touch with Abdul Ahad for full-stack software development projects." path="/contact" />
       <Separator />
 
       {/* Page Header */}

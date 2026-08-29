@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ProfileHeader } from "@/components/profile-header";
 import { Overview } from "@/components/overview";
@@ -8,14 +7,12 @@ import { GitHubContributions } from "@/components/github-contributions";
 import { TeckStack } from "@/components/teck-stack";
 import { Projects } from "@/components/projects";
 import { USER } from "@/portfolio/data/user";
+import { SEO } from "@/components/seo";
 
 export default function HomePage() {
-  useEffect(() => {
-    document.title = `${USER.displayName} – ${USER.jobTitle}`;
-  }, []);
-
   return (
     <>
+      <SEO path="/" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

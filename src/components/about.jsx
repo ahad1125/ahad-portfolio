@@ -1,5 +1,5 @@
 import { Markdown } from "@/components/markdown";
-import { ProseMono } from "@/components/ui/typography";
+import { Prose } from "@/components/ui/typography";
 
 import { Panel, PanelContent, PanelHeader, PanelTitle } from "./panel";
 import { USER } from "@/portfolio/data/user";
@@ -12,9 +12,9 @@ export function About() {
       </PanelHeader>
 
       <PanelContent>
-        <ProseMono>
+        <Prose className="prose-sm text-foreground">
           <Markdown>{USER.about}</Markdown>
-        </ProseMono>
+        </Prose>
       </PanelContent>
     </Panel>
   );

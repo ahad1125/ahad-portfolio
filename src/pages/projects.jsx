@@ -1,8 +1,8 @@
-import { useEffect } from "react";
 import { ProjectsGrid } from "@/components/projects/projects-grid";
 import { PROJECTS } from "@/portfolio/data/projects";
 import { cn } from "@/lib/utils";
 import { USER } from "@/portfolio/data/user";
+import { SEO } from "@/components/seo";
 
 function Separator({ className }) {
   return (
@@ -18,12 +18,9 @@ function Separator({ className }) {
 }
 
 export default function ProjectsPage() {
-  useEffect(() => {
-    document.title = `Projects – ${USER.displayName}`;
-  }, []);
-
   return (
     <div className="mx-auto md:max-w-5xl *:[[id]]:scroll-mt-22">
+      <SEO title="Projects" description="Explore software engineering projects built by Abdul Ahad." path="/projects" />
       <Separator />
 
       {/* Page Header */}
