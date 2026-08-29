@@ -51,7 +51,7 @@
   --color-selection-foreground: var(--selection-foreground);
 
   --font-sans: 'IBM Plex Sans', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-mono: 'IBM Plex Sans', sans-serif;
 
   --shadow-popover: var(--shadow-popover);
 
@@ -307,6 +307,10 @@
   ::backdrop,
   ::file-selector-button {
     @apply border-border outline-ring/50;
+  }
+
+  code, pre {
+    font-family: monospace !important;
   }
 
   ::selection {
