@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    
+    <title>Abdul Ahad – Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Abdul Ahad - Full Stack Developer specializing in Django & React." />
+    
+    <link rel="icon" href="https://stealth.blr1.digitaloceanspaces.com/assest/Frame%201.ico" sizes="any" />
+    <link rel="icon" href="https://stealth.blr1.digitaloceanspaces.com/assest/Frame%201.ico" type="image/svg+xml" />
+    
+    <!-- Google Fonts: IBM Plex Sans & IBM Plex Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --font-sans: 'IBM Plex Sans', sans-serif;
+        --font-mono: 'IBM Plex Mono', monospace;
+        --font-geist-mono: 'IBM Plex Mono', monospace;
+      }
+    </style>
+
+    <script>
+      (function() {
+        try {
+          var theme = localStorage.theme;
+          var isDark = theme === 'dark' || ((!theme || theme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) {
+            meta.setAttribute('content', isDark ? '#09090b' : '#ffffff');
+          }
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (_) {}
+
+        try {
+          if (/(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+            document.documentElement.classList.add('os-macos');
+          }
+        } catch (_) {}
+      })();
+    </script>
+
+    <!-- Analytics Tracking Script -->
+    <script
+      src="/api/script.js"
+      data-site-id="fa97c0b8c76f"
+      async
+    ></script>
+    <script type="module" crossorigin src="/assets/index-DxIwNOib.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DVfyy7bk.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
