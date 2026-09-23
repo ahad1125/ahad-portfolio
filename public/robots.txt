@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ahad-portfolio-xi.vercel.app/sitemap.xml
+Sitemap: https://abdulahad.dev/sitemap.xml

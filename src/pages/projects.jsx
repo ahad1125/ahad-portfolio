@@ -3,31 +3,19 @@ import { PROJECTS } from "@/portfolio/data/projects";
 import { cn } from "@/lib/utils";
 import { USER } from "@/portfolio/data/user";
 import { SEO } from "@/components/seo";
-
-function Separator({ className }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-8 w-full border-x border-edge",
-        "before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]",
-        "before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56",
-        className,
-      )}
-    />
-  );
-}
+import { Separator } from "@/components/separator";
 
 export default function ProjectsPage() {
   return (
     <div className="mx-auto md:max-w-5xl *:[[id]]:scroll-mt-22">
-      <SEO title="Projects" description="Explore software engineering projects built by Abdul Ahad." path="/projects" />
+      <SEO title="Projects" description="Explore backend, AI, and full-stack software engineering projects built by Abdul Ahad." path="/projects" />
       <Separator />
 
       {/* Page Header */}
       <div className="border-x border-b border-edge px-6 py-10">
         <h1 className="text-3xl font-bold tracking-tight">Projects</h1>
-        <p className="mt-3 font-mono text-muted-foreground">
-          A collection of projects showcasing development, design, and ideas.
+        <p className="mt-3 font-mono text-muted-foreground text-sm leading-relaxed">
+          Full-stack and AI engineering projects — from RAG-powered chatbot builders to hybrid code search systems.
         </p>
       </div>
 

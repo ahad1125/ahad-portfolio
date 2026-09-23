@@ -1,5 +1,3 @@
-"use client";
-
 import { useMotionValueEvent, useScroll } from "motion/react";
 import { usePathname } from "@/hooks/use-pathname";
 import { useEffect, useRef, useState } from "react";

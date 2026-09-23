@@ -7,10 +7,10 @@ export const USER = {
   pronouns: "he/him",
   bio: "BS Software Engineering student at PUCIT, building full-stack applications with Django & React.",
   flipSentences: [
-    "Full Stack Developer",
-    "Django & React specialist",
-    "Building with Python & JS",
-    "AI Engineering enthusiast",
+    "Backend Developer — Django & FastAPI",
+    "Building AI-powered applications",
+    "Available for freelance work",
+    "BS Software Engineering @ PUCIT",
   ],
   address: "Lahore, Pakistan",
   phoneNumber: "KzkyIDMxNTc3ODI5Mjk=",
@@ -22,13 +22,12 @@ export const USER = {
   about: `
 - **BS Software Engineering student** at PUCIT, building a strong backend engineering foundation.
 - **Core backend stack**: Python, Django, Django REST Framework, and FastAPI.
-- **Full-stack development** with React, Zustand, React Router, shadcn/ui, and Tailwind CSS.
-- **Interested in AI engineering**: RAG, embeddings, semantic search, and LLM-powered applications.
+- **Full-stack development** with React, React Router, and Tailwind CSS.
+- **Actively building toward AI engineering** — hands-on experience with RAG pipelines, semantic search, and LLM integrations.
 - **Built**: **BotVerse** (multi-tenant AI chatbot builder) and **CodeLens** (hybrid code search platform).
 `,
-  avatar:
-    "https://stealth.blr1.digitaloceanspaces.com/assest/ChatGPT%20Image%20Dec%2023,%202025,%2010_45_13%20PM.png",
-  ogImage: "/Images/og.png",
+  avatar: "/Images/avatar.jpg",
+  ogImage: "/Images/og.jpg",
   namePronunciationUrl: "",
   timeZone: "Asia/Karachi",
   keywords: [
@@ -36,8 +35,15 @@ export const USER = {
     "abdulahad",
     "ahad1125",
     "pucit",
+    "backend developer",
     "full stack developer",
-    "django react developer",
+    "django developer",
+    "fastapi developer",
+    "ai integration",
+    "rag pipeline",
+    "chatbot developer",
+    "freelance developer pakistan",
+    "python developer lahore",
   ],
   dateCreated: "2026-08-29",
   resume:

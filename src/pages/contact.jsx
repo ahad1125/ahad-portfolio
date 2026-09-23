@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   SendIcon,
   Loader2Icon,
@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { USER } from "@/portfolio/data/user";
 import { SEO } from "@/components/seo";
+import { Separator } from "@/components/separator";
 
 function Turnstile({ siteKey, onVerify, onError, onExpire, theme }) {
   const containerRef = useRef(null);
@@ -67,19 +68,6 @@ function Turnstile({ siteKey, onVerify, onError, onExpire, theme }) {
   return <div ref={containerRef} />;
 }
 
-function Separator({ className }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-8 w-full border-x border-edge",
-        "before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]",
-        "before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56",
-        className,
-      )}
-    />
-  );
-}
-
 export default function ContactPage() {
   const { resolvedTheme } = useTheme();
   const [formState, setFormState] = useState("idle");
@@ -89,6 +77,10 @@ export default function ContactPage() {
     email: "",
     message: "",
   });
+
+  const handleVerify = useCallback((token) => setTurnstileToken(token), []);
+  const handleError = useCallback(() => setTurnstileToken(null), []);
+  const handleExpire = useCallback(() => setTurnstileToken(null), []);
 
 
 
@@ -144,9 +136,8 @@ export default function ContactPage() {
       {/* Page Header */}
       <div className="border-x border-b border-edge px-6 py-10">
         <h1 className="text-3xl font-bold tracking-tight">Get in Touch</h1>
-        <p className="mt-3 font-mono text-muted-foreground">
-          Have a project in mind or just want to say hello? I&apos;d love to
-          hear from you.
+        <p className="mt-3 font-mono text-muted-foreground text-sm leading-relaxed">
+          Have a project in mind? I&apos;m available for backend development, REST API work, AI integrations, and full-stack applications. Typical response time: 24 hours.
         </p>
       </div>
 
@@ -257,9 +248,9 @@ export default function ContactPage() {
                     import.meta.env.VITE_TURNSTILE_SITE_KEY ||
                     "1x00000000000000000000AA"
                   }
-                  onVerify={(token) => setTurnstileToken(token)}
-                  onError={() => setTurnstileToken(null)}
-                  onExpire={() => setTurnstileToken(null)}
+                  onVerify={handleVerify}
+                  onError={handleError}
+                  onExpire={handleExpire}
                   theme={resolvedTheme === "dark" ? "dark" : "light"}
                 />
               </div>

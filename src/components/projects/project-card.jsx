@@ -3,12 +3,7 @@ import { Link } from "@/components/link-compat";
 import { PinIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-
-// Helper function to get first alphanumeric character, skipping emojis
-function getFirstAlphanumeric(str) {
-  const match = str.match(/[a-zA-Z0-9]/);
-  return match ? match[0].toUpperCase() : str.charAt(0);
-}
+import { getFirstAlphanumeric } from "@/utils/string";
 
 export function ProjectCard({ project, className }) {
   const { start } = project.period;

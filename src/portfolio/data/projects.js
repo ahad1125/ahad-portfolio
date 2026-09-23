@@ -7,6 +7,11 @@ export const PROJECTS = [
     },
     link: "https://botverse-app.vercel.app",
     github: "https://github.com/ahad1125/BotVerse",
+    media: {
+      type: "image",
+      url: "/Images/botverse.png",
+      alt: "BotVerse — AI chatbot builder landing page",
+    },
     skills: [
       "Django",
       "Django REST Framework",
@@ -26,7 +31,7 @@ export const PROJECTS = [
       "Cloudinary",
       "scikit-learn"
     ],
-    description: `Agentic, bilingual (English/Urdu) chatbot builder platform. Businesses create, train, and deploy custom AI chatbots backed by a RAG pipeline with Gemini embeddings, a live embeddable chat widget, lead generation capture, and semantic analytics (query clustering, peak-hour trends).`,
+    description: `AI-powered chatbot builder platform for businesses. Companies train and deploy custom AI chatbots using a high-accuracy RAG pipeline with Gemini embeddings, featuring an embeddable website widget, lead generation capture, and semantic query analytics.`,
     isPinned: true,
   },
   {
@@ -49,11 +54,34 @@ export const PROJECTS = [
       "React",
       "Vite",
       "Tailwind CSS",
-      "react-syntax-highlighter",
       "Docker",
       "Gemini API"
     ],
-    description: `AI-powered code search and intelligence platform. Ingests public GitHub repos, uses Tree-sitter for structure-aware chunking, combines PostgreSQL full-text search with ChromaDB semantic search (Sentence Transformers) into a hybrid retrieval engine, and answers codebase questions via Gemini with citation-linked source references. Fully Dockerized.`,
+    description: `Natural language code search platform for GitHub repositories. Uses Tree-sitter for AST structure-aware chunking, combines PostgreSQL full-text search with ChromaDB semantic vector search into a hybrid retrieval engine, and answers codebase questions via Gemini with precise code citations.`,
+    isPinned: true,
+  },
+  {
+    id: "replix",
+    title: "Replix",
+    period: {
+      start: "2026",
+      end: "2026",
+    },
+    github: "https://github.com/ahad1125/Replix",
+    skills: [
+      "FastAPI",
+      "Python",
+      "SQLAlchemy",
+      "Alembic",
+      "PostgreSQL",
+      "Redis",
+      "WebSockets",
+      "WhatsApp Webhooks",
+      "Gemini API",
+      "JWT Auth",
+      "Docker"
+    ],
+    description: `High-performance FastAPI backend & automation pipeline. Enables conversational e-commerce over WhatsApp with AI intent detection, structured order extraction, multi-tenant merchant management, WebSocket real-time order tracking, and idempotency control.`,
     isPinned: true,
   }
 ];

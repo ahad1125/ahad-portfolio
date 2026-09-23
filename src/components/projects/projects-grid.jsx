@@ -1,19 +1,10 @@
-"use client";
-
 import { useState, useMemo } from "react";
 import { SearchIcon } from "lucide-react";
 
 import { ProjectCard } from "@/components/projects/project-card";
+import { Separator } from "@/components/separator";
 import { cn } from "@/lib/utils";
-
-// Group projects into rows of 2
-function chunkProjects(arr, size) {
-  const chunks = [];
-  for (let i = 0; i < arr.length; i += size) {
-    chunks.push(arr.slice(i, i + size));
-  }
-  return chunks;
-}
+import { chunkProjects } from "@/utils/projects";
 
 export function ProjectsGrid({ projects }) {
   const [search, setSearch] = useState("");
@@ -107,18 +98,5 @@ export function ProjectsGrid({ projects }) {
         )}
       </div>
     </>
-  );
-}
-
-function Separator({ className }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-8 w-full border-x border-edge",
-        "before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]",
-        "before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56",
-        className,
-      )}
-    />
   );
 }

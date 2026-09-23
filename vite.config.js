@@ -5,13 +5,57 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+function apiDevPlugin(env) {
+  return {
+    name: "api-dev-plugin",
+    configureServer(server) {
+      server.middlewares.use("/api/resend", async (req, res, next) => {
+        if (req.method !== "POST") return next();
+
+        // Sync env vars to process.env
+        if (env) {
+          Object.assign(process.env, env);
+        }
+
+        let body = "";
+        req.on("data", (chunk) => {
+          body += chunk;
+        });
+        req.on("end", async () => {
+          try {
+            const parsedBody = body ? JSON.parse(body) : {};
+            req.body = parsedBody;
+
+            const { default: handler } = await import("./api/resend.js");
+
+            res.status = (code) => {
+              res.statusCode = code;
+              return res;
+            };
+            res.json = (data) => {
+              res.setHeader("Content-Type", "application/json");
+              res.end(JSON.stringify(data));
+              return res;
+            };
+
+            await handler(req, res);
+          } catch (err) {
+            console.error("Local API Handler Error:", err);
+            res.statusCode = 500;
+            res.setHeader("Content-Type", "application/json");
+            res.end(JSON.stringify({ error: err.message }));
+          }
+        });
+      });
+    },
+  };
+}
+
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
-  const rybbitHost = env.NEXT_PUBLIC_RYBBIT_HOST || "";
-
   return {
-    plugins: [react()],
+    plugins: [react(), apiDevPlugin(env)],
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
@@ -19,18 +63,6 @@ export default defineConfig(({ mode }) => {
     },
     server: {
       port: 3000,
-      proxy: rybbitHost
-        ? {
-            "/api/script.js": {
-              target: rybbitHost,
-              changeOrigin: true,
-            },
-            "/api/track": {
-              target: rybbitHost,
-              changeOrigin: true,
-            },
-          }
-        : undefined,
     },
   };
 });

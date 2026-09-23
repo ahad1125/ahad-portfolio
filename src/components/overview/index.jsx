@@ -1,6 +1,5 @@
-"use client";
 
-import { FileTextIcon, KeyRoundIcon, MapPinIcon } from "lucide-react";
+import { BriefcaseIcon, FileTextIcon, MapPinIcon } from "lucide-react";
 
 import { Panel, PanelContent } from "../panel";
 import { EmailItem } from "./email-item";
@@ -82,17 +81,14 @@ export function Overview() {
 
           <IntroItem>
             <IntroItemIcon>
-              <KeyRoundIcon />
+              <BriefcaseIcon />
             </IntroItemIcon>
             <IntroItemContent>
               <IntroItemLink
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                aria-label="secret"
-                onClick={() =>
-                  trackEvent("secret_click", { source: "overview" })
-                }
+                href="/contact"
+                aria-label="Available for freelance projects"
               >
-                secret
+                Open to freelance
               </IntroItemLink>
             </IntroItemContent>
           </IntroItem>

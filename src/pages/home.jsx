@@ -6,6 +6,8 @@ import { About } from "@/components/about";
 import { GitHubContributions } from "@/components/github-contributions";
 import { TeckStack } from "@/components/teck-stack";
 import { Projects } from "@/components/projects";
+import { Services } from "@/components/services";
+import { Separator } from "@/components/separator";
 import { USER } from "@/portfolio/data/user";
 import { SEO } from "@/components/seo";
 
@@ -35,8 +37,13 @@ export default function HomePage() {
 
         <Projects />
         <Separator />
+
+        <Services />
+        <Separator />
+
         <GitHubContributions />
         <Separator />
+
         <SocialLinks />
         <Separator />
       </div>
@@ -59,15 +66,3 @@ function getPageJsonLd() {
   };
 }
 
-function Separator({ className }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-8 w-full border-x border-edge",
-        "before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]",
-        "before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56",
-        className,
-      )}
-    />
-  );
-}

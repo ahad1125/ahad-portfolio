@@ -19,25 +19,8 @@ import { PROJECTS } from "@/portfolio/data/projects";
 import { cn } from "@/lib/utils";
 import { USER } from "@/portfolio/data/user";
 import { SEO } from "@/components/seo";
-
-// Helper function to get first alphanumeric character, skipping emojis
-function getFirstAlphanumeric(str) {
-  const match = str.match(/[a-zA-Z0-9]/);
-  return match ? match[0].toUpperCase() : str.charAt(0);
-}
-
-function Separator({ className }) {
-  return (
-    <div
-      className={cn(
-        "relative flex h-8 w-full border-x border-edge",
-        "before:absolute before:-left-[100vw] before:-z-1 before:h-8 before:w-[200vw]",
-        "before:bg-[repeating-linear-gradient(315deg,var(--pattern-foreground)_0,var(--pattern-foreground)_1px,transparent_0,transparent_50%)] before:bg-size-[10px_10px] before:[--pattern-foreground:var(--color-edge)]/56",
-        className,
-      )}
-    />
-  );
-}
+import { Separator } from "@/components/separator";
+import { getFirstAlphanumeric } from "@/utils/string";
 
 export default function ProjectDetailPage() {
   const { id } = useParams();
@@ -68,7 +51,7 @@ export default function ProjectDetailPage() {
         <Button asChild variant="ghost" size="icon" className="shrink-0">
           <Link href="/projects">
             <ArrowLeftIcon className="size-4" />
-            <span className="sr-only">Back to Home</span>
+            <span className="sr-only">Back to Projects</span>
           </Link>
         </Button>
         <div className="flex items-center gap-3">
