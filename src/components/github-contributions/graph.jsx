@@ -28,8 +28,7 @@ export function GitHubContributionGraph({ contributions }) {
         data={data}
         blockSize={11}
         blockMargin={3}
-        blockRadius={2}
-
+        blockRadius={0}
       >
         <ContributionGraphCalendar
           className="no-scrollbar px-2"
