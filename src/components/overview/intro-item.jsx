@@ -1,3 +1,4 @@
+import { Link } from "@/components/link-compat";
 import { cn } from "@/lib/utils";
 
 export function IntroItem({ className, ...props }) {
@@ -27,12 +28,11 @@ export function IntroItemContent({ className, ...props }) {
   return <p className={cn("text-balance", className)} {...props} />;
 }
 
-export function IntroItemLink({ className, ...props }) {
+export function IntroItemLink({ className, href, ...props }) {
   return (
-    <a
+    <Link
+      href={href}
       className={cn("underline-offset-4 hover:underline", className)}
-      target="_blank"
-      rel="noopener noreferrer"
       {...props}
     />
   );
