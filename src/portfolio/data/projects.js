@@ -50,6 +50,11 @@ Demonstrates end-to-end full-stack capabilities, cloud deployment (**Vercel** fr
       end: "2026",
     },
     github: "https://github.com/ahad1125/CodeLens",
+    media: {
+      type: "image",
+      url: "/Images/codelens.png",
+      alt: "CodeLens — Codebase Intelligence Engine & Hybrid Search",
+    },
     skills: [
       "Django REST Framework",
       "Tree-sitter",
